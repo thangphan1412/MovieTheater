@@ -2,10 +2,8 @@ package entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import jakarta.persistence.Table;
+import lombok.*;
 
 import java.util.Date;
 
@@ -13,7 +11,8 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-
+@ToString
+@Table(name = "userss")
 public class Users {
     @Id
     private int idUser;
