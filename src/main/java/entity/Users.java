@@ -1,27 +1,34 @@
 package entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
-
-import java.util.Date;
 
 @Getter@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@ToString
-@Table(name = "userss")
+@Table(name = "users")
 public class Users {
     @Id
-    private int idUser;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int userId;
     private String username;
     private String password;
-    private String confirmPassword;
+
     private String fullName;
     private String email;
     private String numberPhone;
-    private Date dateOfBirth;
-    private double sex;
+
+
+
+    // one to one with ticket
+    @OneToOne(mappedBy = "users")
+    private Ticket ticket;
+    // one to one payment
+    @OneToOne(mappedBy = "users")
+    private Payment payment;
+    //transaction
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "user_id", referencedColumnName = "userId")
+    private Transactiones transactionss;
 }

@@ -1,12 +1,7 @@
 package entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import jakarta.persistence.*;
+import lombok.*;
 
 @Setter
 @Getter
@@ -14,7 +9,9 @@ import lombok.Setter;
 @NoArgsConstructor
 @Entity
 @Table(name = "voucher")
+@ToString
 public class Vocher {
     @Id
-    private int id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int voucherId;
 }

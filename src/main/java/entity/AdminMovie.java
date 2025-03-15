@@ -1,9 +1,9 @@
 package entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.List;
 
 @Setter
 @Getter
@@ -14,7 +14,8 @@ import lombok.*;
 @Entity
 public class AdminMovie {
     @Id
-    private int idAdminMovie;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int movieAdminId;
     private String fullName;
     private String email;
     private String userName;
@@ -22,4 +23,7 @@ public class AdminMovie {
     private String numberPhone;
     private String address;
 
+    // employee
+    @OneToMany(mappedBy = "adminMovie")
+    private List<Employee> employees;
 }
