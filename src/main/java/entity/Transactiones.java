@@ -29,6 +29,6 @@ public class Transactiones {
     @JoinColumn(name = "employee_id")
     private Employee employee;
     //Ticket
-    @OneToMany(mappedBy = "transactionss")
+    @OneToMany(mappedBy = "transactiones")
     private List<Ticket> tickets;
 }

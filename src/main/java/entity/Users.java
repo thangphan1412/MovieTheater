@@ -30,5 +30,5 @@ public class Users {
     //transaction
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id", referencedColumnName = "userId")
-    private Transactiones transactionss;
+    private Transactiones transactiones;
 }

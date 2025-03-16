@@ -9,7 +9,7 @@ import java.util.List;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "admin_movie")
+@Table(name = "adminMovie")
 @ToString
 @Entity
 public class AdminMovie {

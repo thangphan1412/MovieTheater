@@ -31,7 +31,7 @@ public class Ticket {
     //transaction
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "transaction_id")
-    private Transactiones transactionss;
+    private Transactiones transactiones;
     //showtim
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "showtime_id", referencedColumnName = "showtimeId")

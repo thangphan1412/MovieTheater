@@ -26,9 +26,9 @@ public class Employee {
 
     // admin
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "admin_id")
+    @JoinColumn(name = "admin_id", nullable = false)
     private AdminMovie adminMovie;
     // trasaction
-    @OneToMany(mappedBy = "employees")
-    private List<Transactiones> transactions;
+    @OneToMany(mappedBy = "employee")
+    private List<Transactiones> transactiones;
 }
