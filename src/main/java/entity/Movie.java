@@ -27,6 +27,7 @@ public class Movie {
     private String country;
     private String language;
     private int duration;
+    private String image;
 
 
     //showtime
