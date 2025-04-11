@@ -7,12 +7,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 
-@RestController
+@Controller
 public class HomeController {
     @GetMapping("/home")
     public String home() {
 
-        return "index";
+        return "";
     }
     @GetMapping("/login")
     public String login() {

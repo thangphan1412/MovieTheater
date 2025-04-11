@@ -1,15 +1,34 @@
-<!--<!DOCTYPE html>-->
-<!--<html lang="vi">-->
-<!--<head>-->
-<!--    <meta charset="UTF-8">-->
-<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
-<!--    <title>Footer Example</title>-->
 
-<!--</head>-->
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<html  lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .footer-container {
+            display: flex;          /* Thêm flex vào container cha */
+            justify-content: space-between; /* Chia đều 2 bên */
+            gap: 150px;             /* Tạo khoảng cách giữa 2 cột */
+            max-width: 1200px;     /* Thêm max-width để căn giữa */
+            margin: 0 auto;        /* Căn giữa container */
+            padding: 20px;         /* Thêm padding cho đẹp */
+        }
+
+        .footer-left,
+        .footer-right {
+            flex: 1;               /* Chiếm không gian bằng nhau */
+            min-width: 300px;     /* Ngăn thu nhỏ quá mức */
+        }
+
+        /* Xóa CSS không cần thiết cho thẻ h5 */
+        h5 {
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        /* Các phần khác giữ nguyên */
+    </style>
 <body>
-<div th:fragment="footer">
+<div >
     <!-- Footer -->
     <footer>
         <div class="footer-container">
