@@ -1,18 +1,23 @@
 package controller;
 
+import entity.Movie;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
+import java.util.List;
 
-@Controller
+
+@RestController
 public class HomeController {
-    @GetMapping("/home")
-    public String home() {
+    private List<Movie> movies =new ArrayList<>();
+    @GetMapping("/index")
+    public List<Movie> home() {
 
-        return "";
+        return movies;
     }
     @GetMapping("/login")
     public String login() {

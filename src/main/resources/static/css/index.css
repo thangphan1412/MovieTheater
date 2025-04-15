@@ -4,3 +4,11 @@
     height: 100vh;
     gap: 10px;
 }
+.infor-movie ul{
+    list-style-type: none;
+}
+.infor-movie a{
+    color: black;
+    font-size: 30px;
+    text-decoration: none;
+}

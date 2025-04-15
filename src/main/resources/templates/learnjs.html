@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <input id="input" value=""> nhap ten<br>
+    <button onclick="hello()">OKE</button>
+    <div id="loi_chao"> </div>
+    <script>
+        // var name = 'thang' kieu string
+        // lay du lieu tu ben ngoai vao
+        // var name = "thang"
+        // var age = 18
+        //  age = window.prompt("nhap tuoi")
+        // if(age >= 18){
+        //     document.write("abc")
+        // } else {
+        //     document.write(name)
+        // }
+        // for
+        // var tuoi =123;
+        // tuoi = parseInt(window.prompt("nhap tuoi"))
+        // for (var i = 0; i < 10; i++){
+        //     document.write("nam nay", tuoi, "<br>")
+        // }
+        // object
+        // var abc ={
+        //     ten: "lan",
+        //     tuoi: 17,
+        //     hon_nhan: true,
+        //     dia_chi: {
+        //         city: "Ha noi",
+        //         quan: "ninh binh"
+        //     }
+        // }
+        // document.write(abc.ten)
+        // // fuction: tap cac cau lenh (co ten goi khac la chuong trinh con)
+        // var tinh_tuoi= function (){
+        //     var nam_sinh =parseInt( window.prompt("nhap nam sinh"))
+        //     tuoi = 2025- nam_sinh
+        //     document.write(abc.tuoi)
+        // }
+        // tinh_tuoi()
+        // DOM = document object model la thanh phan cau noi giua js vs html
+        var hello = function (){
+           var ten= document.getElementById("input").value
+            loi_chao = "xinchao" + ten
+            // thang write se ghi de het len
+            document.getElementById("loi_chao").innerHTML = loi_chao
+            // document.write(loi_chao)
+
+        }
+    </script>
+</body>
+</html>
+<!--  co 6 loai bien
+number
+string
+boolean(logic)
+object
+underfile
+null
+-->
+
+<!--co che bat dong bo
+
+-->
