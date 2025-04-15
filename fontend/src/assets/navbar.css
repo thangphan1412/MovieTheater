@@ -1,0 +1,15 @@
+.navbar_main{
+    background-color: black;
+    text-align: right;
+    list-style-type: none;
+
+}
+.navbar_main li{
+    display: inline-block;
+    gap: 10px;
+}
+.navbar_main li a{
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+}
