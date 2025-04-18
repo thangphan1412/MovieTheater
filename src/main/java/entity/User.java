@@ -3,17 +3,22 @@ package entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 @Getter@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@Builder
 @Table(name = "users")
 public class Users {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int userId;
+    private String userId;
     private String username;
     private String password;
+    private String firstName;
+    private String lastName;
 
     private String fullName;
     private String email;
@@ -31,4 +36,11 @@ public class Users {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id", referencedColumnName = "userId")
     private Transactiones transactiones;
+
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "account_role",
+            joinColumns = @JoinColumn(name = "account_id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id"))
+    private List<Role> roles;
 }
