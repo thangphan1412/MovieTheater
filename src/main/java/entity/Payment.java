@@ -24,5 +24,5 @@ public class Payment {
     //one to one user
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id" , referencedColumnName = "userId")
-    private Users users;
+    private User users;
 }

@@ -24,7 +24,7 @@ public class Ticket {
     // one to one with user
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id_User", referencedColumnName = "userId")
-    private Users users;
+    private User users;
     // foot
     @OneToMany(mappedBy = "ticket")
     private List<Foots> foots;
