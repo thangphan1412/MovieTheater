@@ -15,8 +15,8 @@ import java.util.List;
 @ToString
 public class Ticket {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int ticketId;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private String ticketId;
     private double price;
     private Date purchaseDate;
     private Boolean status;

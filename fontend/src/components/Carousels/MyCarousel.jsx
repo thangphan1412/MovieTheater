@@ -1,6 +1,6 @@
 import Carousel from 'react-bootstrap/Carousel';
-import poster from '../img/1.jpg'
-function MyCarousel(){
+import poster from '../../assets/img/1.jpg'
+const MyCarousel = () =>{
     return (
         <Carousel>
             <Carousel.Item>

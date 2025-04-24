@@ -1,6 +1,6 @@
 import '../assets/pictureFilm.css'
 import ButtonByTick from "./ButtonByTick/Button";
-function PictureFilm() {
+const PictureFilm = () => {
     const movie= [
         { id: 1, title: "Phim 1", image: "linkảnh1" },
         { id: 2, title: "Phim 2", image: "linkảnh2" },

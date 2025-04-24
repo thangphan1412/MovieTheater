@@ -1,5 +1,5 @@
 import '../assets/footer.css'
-function Footer() {
+const Footer = () => {
     return(
         <div className="footer">
                 <hr></hr>

@@ -14,8 +14,8 @@ import java.util.List;
 @ToString
 public class Theater {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int theaterId;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private String theaterId;
     private String theaterName;
     private int totalNumberOfSeats;
 

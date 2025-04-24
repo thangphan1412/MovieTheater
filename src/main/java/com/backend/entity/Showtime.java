@@ -15,8 +15,8 @@ import java.util.List;
 @Table(name = "showtime")
 public class Showtime {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int showtimeId;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private String showtimeId;
     private Time startTime;
     private Time endTime;
 

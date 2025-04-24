@@ -1,7 +1,7 @@
 import Carousel from 'react-bootstrap/Carousel';
 import MyCarousel from "./MyCarousel";
 
-function Carousels() {
+const Carousels = () => {
     return (
         <Carousel>
             <Carousel.Item>

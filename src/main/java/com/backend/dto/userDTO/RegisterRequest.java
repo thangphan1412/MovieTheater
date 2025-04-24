@@ -1,4 +1,4 @@
-package com.backend.dto;
+package com.backend.dto.userDTO;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

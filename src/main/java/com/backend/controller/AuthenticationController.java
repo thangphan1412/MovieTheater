@@ -1,8 +1,8 @@
 package com.backend.controller;
 
-import com.backend.dto.AuthenticationRequest;
-import com.backend.dto.AuthenticationResponse;
-import com.backend.dto.RegisterRequest;
+import com.backend.dto.userDTO.AuthenticationRequest;
+import com.backend.dto.userDTO.AuthenticationResponse;
+import com.backend.dto.userDTO.RegisterRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -21,12 +21,11 @@ public class AuthenticationController {
     public ResponseEntity<AuthenticationResponse> register(
             @RequestBody RegisterRequest request
     ) {
-        System.out.println(">>> Register request received: ");
         return ResponseEntity.ok(authenticationService.register(request));
     }
 
     @PostMapping("/authenticate")
-    public ResponseEntity<AuthenticationResponse> register(
+    public ResponseEntity<AuthenticationResponse> authenticate(
             @RequestBody AuthenticationRequest request
     ) {
         return ResponseEntity.ok(authenticationService.authenticate(request));

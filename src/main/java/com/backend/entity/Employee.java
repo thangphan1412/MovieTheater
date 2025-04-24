@@ -13,8 +13,8 @@ import java.util.List;
 @Table(name = "employees")
 public class Employee {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int employeeID;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private String employeeID;
     private String fullName;
     private String email;
     private String account;

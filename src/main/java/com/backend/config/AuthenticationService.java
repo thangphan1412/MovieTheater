@@ -1,9 +1,9 @@
 package com.backend.config;
 
 
-import com.backend.dto.AuthenticationRequest;
-import com.backend.dto.AuthenticationResponse;
-import com.backend.dto.RegisterRequest;
+import com.backend.dto.userDTO.AuthenticationRequest;
+import com.backend.dto.userDTO.AuthenticationResponse;
+import com.backend.dto.userDTO.RegisterRequest;
 import com.backend.entity.User;
 import com.backend.enums.Role;
 import org.springframework.beans.factory.annotation.Autowired;

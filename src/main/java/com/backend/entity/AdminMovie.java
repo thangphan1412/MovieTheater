@@ -14,8 +14,8 @@ import java.util.List;
 @Entity
 public class AdminMovie {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int movieAdminId;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private String movieAdminId;
     private String fullName;
     private String email;
     private String userName;

@@ -12,8 +12,8 @@ import lombok.*;
 @ToString
 public class Seat {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int seatId;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private String seatId;
     private int row;
     private int numberSeat;
     private boolean status;

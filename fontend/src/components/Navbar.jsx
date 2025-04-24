@@ -1,13 +1,18 @@
 import '../assets/navbar.css';
-import { Link } from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
+import React from "react";
+import NavbarContent from "./Carousels/NavbarContent";
 
-function Navbar() {
+
+const Navbar = () => {
+    const navigate = useNavigate();
     return (
-        <div className="navbar_main">
-            <ul>
-                <li><Link to="/login">Sign in</Link></li>
-                <li><Link to="/register">Register</Link></li>
-            </ul>
+        <div>
+            <div className="navbar_main">
+                <button  onClick={() => navigate("/login")}>Đăng nhập</button>
+                <button  onClick={() => navigate("/register")}>Register</button>
+            </div>
+            <NavbarContent/>
         </div>
     );
 }

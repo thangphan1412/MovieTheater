@@ -1,36 +1,21 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-import PictureFilm from "./components/PictureFilm";
-import Carousels from "./components/Carousels/Carousels";
-import Register from "./pages/register/Register";
-import Learn from "./Learn";
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import Login from "./components/Login";
+import Register from "./components/Register";
+import Home from "./components/Home";
 
 function App() {
     return (
         <Router>
-            <div className="Header">
-                <Navbar />
-
+            <div className="">
                 <Routes>
-                    {/* Trabg chủ */}
-                    <Route path="/" element={
-                        <>
-                            <Carousels />
-                            <PictureFilm />
-                        </>
-                    } />
-
-                    {/* Trang đăng ký */}
+                    <Route path="/" element={<Home />} />
+                    <Route path="/home" element={<Home />} />
+                    <Route path="/login" element={<Login />} />
                     <Route path="/register" element={<Register />} />
                 </Routes>
-
-                <Footer />
             </div>
         </Router>
-        // <Learn/>
     );
 }
 
