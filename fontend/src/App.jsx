@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import PictureFilm from "./components/PictureFilm";
 import Carousels from "./components/Carousels/Carousels";
 import Register from "./pages/register/Register";
+import Learn from "./Learn";
 
 function App() {
     return (
@@ -29,6 +30,7 @@ function App() {
                 <Footer />
             </div>
         </Router>
+        // <Learn/>
     );
 }
 
