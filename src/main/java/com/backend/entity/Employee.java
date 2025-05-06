@@ -14,7 +14,7 @@ import java.util.List;
 public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private String employeeID;
+    private String employeeId;
     private String fullName;
     private String email;
     private String account;

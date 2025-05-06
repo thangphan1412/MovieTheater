@@ -32,6 +32,15 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         final String authorHeader = request.getHeader("Authorization");
         final String token;
         final String userEmail;
+        // buoc cuoi kiem tra xem neu URL la permitAll thi bo qua
+        String path = request.getRequestURI();
+        if(path.startsWith("/api/admin")|| path.startsWith("/api/cinemas") ) {
+            filterChain.doFilter(request, response);
+        }
+        if(authorHeader != null && authorHeader.startsWith("Bearer ")) {
+            filterChain.doFilter(request, response);
+        }
+        //
         if (authorHeader == null || !authorHeader.startsWith("Bearer ")) {
             filterChain.doFilter(request, response);
             return;

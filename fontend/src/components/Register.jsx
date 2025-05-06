@@ -4,7 +4,6 @@ import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
 import '../assets/register.css';
 import Navbar from "./Navbar";
-import NavbarContent from "./Carousels/NavbarContent";
 import {useState} from "react";
 import {register} from "../api/register";
 

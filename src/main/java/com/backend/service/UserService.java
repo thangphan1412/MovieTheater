@@ -5,6 +5,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public interface UserService {
@@ -13,4 +14,6 @@ public interface UserService {
     UserDetails getUserByEmail(String email);
 
     UserDetails getUserById(String id);
+
+    Optional<User> findById(String id);
 }

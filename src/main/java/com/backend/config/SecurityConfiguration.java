@@ -29,6 +29,8 @@ public class SecurityConfiguration {
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/api/v1/auth/**").permitAll()
                         .requestMatchers("/api/cinemas").permitAll()
+                        .requestMatchers("/api/admin/**").permitAll()
+                        .requestMatchers("/api/admin/createEmployee").permitAll()
                         .anyRequest().authenticated()
                 )
                 .sessionManagement(session -> session

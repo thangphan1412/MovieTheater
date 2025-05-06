@@ -8,6 +8,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.Optional;
 
 @Component
 public class UserServiceImpl implements UserService {
@@ -27,5 +28,10 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserDetails getUserById(String id) {
         return null;
+    }
+
+    @Override
+    public Optional<User> findById(String id) {
+        return userRepository.findById(id);
     }
 }
