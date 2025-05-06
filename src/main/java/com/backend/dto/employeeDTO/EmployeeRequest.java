@@ -14,6 +14,14 @@ import java.util.UUID;
 @Builder
 public class EmployeeRequest {
     private String fullName;
+    private String email;
+    private String account;
+    private String password;
+    private String phone;
+    private boolean sex;
+    private String idCitizenCard;
+    private String shift;
     private Long adminMovieId;
+
 
 }

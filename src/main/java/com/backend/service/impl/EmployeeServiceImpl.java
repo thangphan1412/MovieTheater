@@ -29,11 +29,19 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public Employee creat(EmployeeRequest request) {
+    public Employee create(EmployeeRequest request) {
+        // kiem tra xem amin đã tồn tại trong database
         AdminMovie adminMovie = adminMovieRepository.findById(request.getAdminMovieId())
-                .orElseThrow(() -> new RuntimeException("AdminMovie not found with ID" + request.getAdminMovieId()));
+                .orElseThrow(() -> new RuntimeException("AdminMovie not found with ID" ));
         Employee employee = new Employee();
         employee.setFullName(request.getFullName());
+        employee.setEmail(request.getEmail());
+        employee.setAccount(request.getAccount());
+        employee.setPassword(request.getPassword());
+        employee.setPhone(request.getPhone());
+        employee.setSex(request.isSex());
+        employee.setIdCitizenCard(request.getIdCitizenCard());
+        employee.setShift(request.getShift());
         employee.setAdminMovie(adminMovie);
         return employeeReposotory.save(employee);
     }

@@ -46,7 +46,7 @@ public class AdminController {
     // tao nhan vien
     @PostMapping("/createEmployee")
     public ResponseEntity<Employee> createEmployee(@RequestBody EmployeeRequest request) {
-        Employee savedEmployee = employeeService.creat(request);
+        Employee savedEmployee = employeeService.create(request);
         return ResponseEntity.ok(savedEmployee);
     }
 

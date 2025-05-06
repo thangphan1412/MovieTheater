@@ -11,5 +11,5 @@ import java.util.Optional;
 public interface EmployeeService {
      List<Employee> getAllEmployees();
     Optional<Employee> findById(Long employeeId);
-    Employee creat(EmployeeRequest request);
+    Employee create(EmployeeRequest request);
 }
