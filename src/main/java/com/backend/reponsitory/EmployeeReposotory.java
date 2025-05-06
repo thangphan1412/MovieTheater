@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 @Repository
-public interface EmployeeReposotory extends JpaRepository<Employee, Integer> {
-    Optional<Employee> findByEmployeeId(String employeeID);
+public interface EmployeeReposotory extends JpaRepository<Employee, Long> {
+    Optional<Employee> findByEmployeeId(Long employeeID);
     Employee save(Employee employee);
 }

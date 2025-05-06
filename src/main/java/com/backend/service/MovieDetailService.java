@@ -10,5 +10,5 @@ import java.util.Optional;
 public interface MovieDetailService {
     List<Movie> getAllMovieDetails();
 
-    Optional<Object> getMovieDetailsByID(String id);
+    Optional<Object> getMovieDetailsByID(Long id);
 }

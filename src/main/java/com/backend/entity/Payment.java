@@ -14,8 +14,8 @@ import java.util.Date;
 @ToString
 public class Payment {
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private String paymentId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long paymentId;
     private double amount;
     private String paymentMethod;
     private Date paymentDate;

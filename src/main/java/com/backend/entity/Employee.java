@@ -13,8 +13,8 @@ import java.util.List;
 @Table(name = "employees")
 public class Employee {
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private String employeeId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long employeeId;
     private String fullName;
     private String email;
     private String account;
@@ -25,7 +25,7 @@ public class Employee {
     private String shift;
 
     // admin
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "admin_id", nullable = false)
     private AdminMovie adminMovie;
     // trasaction

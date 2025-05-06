@@ -6,6 +6,7 @@ import '../assets/register.css';
 import Navbar from "./Navbar";
 import {useState} from "react";
 import {register} from "../api/register";
+import {useNavigate} from "react-router-dom";
 
 const Register = () => {
     //
@@ -18,7 +19,7 @@ const Register = () => {
         phoneNumber:''
     });
     const [message, setMessage] = useState('');
-
+    const navigate = useNavigate();
     const handleChange = (e) =>{
         setFormData({...formData, [e.target.name]: e.target.value})
     };
@@ -28,6 +29,7 @@ const Register = () => {
             const data = await register(formData);
             console.log('Register success:', data);
             setMessage('Dang ky thanh cong');
+            navigate("/api/v1/auth/authenticate")
         } catch (error){
             console.error('Register error');
             setMessage('Dang ky that bai');

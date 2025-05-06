@@ -16,8 +16,8 @@ import java.util.List;
 @ToString
 public class Movie {
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private String movieId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long movieId;
     private String title;
     private String director;
     private Date releaseDate;

@@ -1,10 +1,13 @@
 package com.backend.controller;
 
+import com.backend.dto.employeeDTO.EmployeeRequest;
+import com.backend.entity.AdminMovie;
 import com.backend.entity.Employee;
 import com.backend.entity.User;
 import com.backend.service.EmployeeService;
 import com.backend.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
@@ -26,7 +29,7 @@ public class AdminController {
     }
 
     @GetMapping("/user/{id}")
-    public Optional<User> getUserById(@PathVariable String id) {
+    public Optional<User> getUserById(@PathVariable Long id) {
         return userService.findById(id);
     }
 
@@ -37,13 +40,14 @@ public class AdminController {
         return employeeService.getAllEmployees();
     }
     @GetMapping("/employee/{id}")
-    public Optional<Employee> getEmployeeById(@PathVariable String id) {
+    public Optional<Employee> getEmployeeById(@PathVariable Long id) {
         return employeeService.findById(id);
     }
     // tao nhan vien
     @PostMapping("/createEmployee")
-    public Employee createEmployee(@RequestBody Employee employee) {
-        return employeeService.creat(employee);
+    public ResponseEntity<Employee> createEmployee(@RequestBody EmployeeRequest request) {
+        Employee savedEmployee = employeeService.creat(request);
+        return ResponseEntity.ok(savedEmployee);
     }
 
 }

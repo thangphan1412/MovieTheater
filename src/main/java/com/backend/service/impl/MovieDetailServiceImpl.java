@@ -22,7 +22,7 @@ public class MovieDetailServiceImpl implements MovieDetailService {
     }
 
     @Override
-    public Optional<Object> getMovieDetailsByID(String id) {
+    public Optional<Object> getMovieDetailsByID(Long id) {
         return Optional.of(movieDetailRepository.findById(Long.valueOf(id)));
     }
 }

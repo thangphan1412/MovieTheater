@@ -13,5 +13,5 @@ import lombok.*;
 public class Vocher {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int voucherId;
+    private Long voucherId;
 }

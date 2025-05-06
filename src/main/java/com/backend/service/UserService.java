@@ -13,7 +13,7 @@ public interface UserService {
 
     UserDetails getUserByEmail(String email);
 
-    UserDetails getUserById(String id);
+    UserDetails getUserById(Long id);
 
-    Optional<User> findById(String id);
+    Optional<User> findById(Long id);
 }

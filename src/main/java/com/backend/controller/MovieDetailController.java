@@ -23,7 +23,7 @@ public class MovieDetailController {
     }
 
     @GetMapping("/{id}")
-    public Optional<Object> getMovieDetail(@PathVariable String id) {
+    public Optional<Object> getMovieDetail(@PathVariable Long id) {
         return movieDetailService.getMovieDetailsByID(id);
     }
 }

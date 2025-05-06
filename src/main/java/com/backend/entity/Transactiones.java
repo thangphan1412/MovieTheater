@@ -15,8 +15,8 @@ import java.util.List;
 @ToString
 public class Transactiones {
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private String transactionId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long transactionId;
     private double totalAmount;
     private Date transactionDate;
 

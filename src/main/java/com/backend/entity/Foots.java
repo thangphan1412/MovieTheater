@@ -12,8 +12,8 @@ import lombok.*;
 @ToString
 public class Foots {
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private String foodId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long foodId;
     private String name;
     private double price;
 
