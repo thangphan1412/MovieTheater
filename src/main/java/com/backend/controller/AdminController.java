@@ -49,5 +49,10 @@ public class AdminController {
         Employee savedEmployee = employeeService.create(request);
         return ResponseEntity.ok(savedEmployee);
     }
-
+    // xoa nhan vien
+//    @DeleteMapping("/employee/{id}")
+//    public ResponseEntity<Employee> deleteEmployee(@RequestBody EmployeeRequest request) {
+//        Employee deEmployee = employeeService.delete(request);
+//        return ResponseEntity.ok(deEmployee);
+//    }
 }

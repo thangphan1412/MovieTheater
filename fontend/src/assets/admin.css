@@ -1,0 +1,9 @@
+.admin-container .information{
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+h1 {
+    justify-content: center;
+}

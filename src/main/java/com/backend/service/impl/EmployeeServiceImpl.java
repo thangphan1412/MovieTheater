@@ -45,4 +45,13 @@ public class EmployeeServiceImpl implements EmployeeService {
         employee.setAdminMovie(adminMovie);
         return employeeReposotory.save(employee);
     }
+
+//    @Override
+//    public Employee delete(EmployeeRequest request) {
+//        // kiem tra admin
+//        AdminMovie adminMovie = adminMovieRepository.findById(request.getAdminMovieId())
+//                .orElseThrow(() -> new RuntimeException("AdminMovie not found with ID" ));
+//        employeeReposotory.delete(request);
+//        return null;
+//    }
 }

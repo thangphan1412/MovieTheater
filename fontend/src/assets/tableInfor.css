@@ -1,0 +1,31 @@
+.infor-wrapper {
+    height: 100vh; /* Chiếm toàn bộ chiều cao màn hình */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f9f9f9;
+}
+.search-infor{
+    border: 2px solid black;
+}
+.search-infor button{
+    background-color: green;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 6px;
+
+}
+.infor-main {
+    width: 400px;
+    height: 500px;
+    border: 2px solid black;
+    padding: 20px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.table-wrapper {
+    flex: 1;
+}
