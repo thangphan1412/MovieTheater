@@ -1,15 +1,15 @@
 import React from 'react';
 import NavbarAdmin from "./AdminScreen/NavbarAdmin";
-import InforMain from "./AdminScreen/InforMain";
+import InforUser from "./AdminScreen/InforUser";
 import '../assets/admin.css'
 const Admin = () =>{
 
     return(
         <div className="admin-container">
-            <h1>Admin Page</h1>
+            <h1>Trang quản lý</h1>
             <div className="information">
                 <NavbarAdmin/>
-                <InforMain/>
+                <InforUser/>
             </div>
         </div>
     );

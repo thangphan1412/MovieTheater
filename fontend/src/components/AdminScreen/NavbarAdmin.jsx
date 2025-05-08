@@ -10,7 +10,7 @@ const NavbarAdmin = () => {
             </div>
 
             <div className="button-infor">
-                <button>Thông tin ....</button>
+                <button>Tạo nhân viên</button>
             </div>
             <div className="button-infor">
                 <button>Thông tin ....</button>

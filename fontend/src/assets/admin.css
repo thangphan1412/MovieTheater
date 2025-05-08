@@ -4,6 +4,7 @@
     align-items: flex-start;
 }
 
-h1 {
+.admin-container h1 {
+    display: flex;
     justify-content: center;
 }
