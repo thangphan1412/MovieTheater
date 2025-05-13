@@ -13,6 +13,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @Builder
 public class EmployeeRequest {
+
     private String fullName;
     private String email;
     private String account;

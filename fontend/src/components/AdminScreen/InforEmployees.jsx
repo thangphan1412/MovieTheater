@@ -1,6 +1,8 @@
 import '../../assets/tableInfor.css'
+import {useNavigate} from "react-router-dom";
 const InforEmployees = () => {
-  return (
+    const navigate = useNavigate();
+    return (
       <div className="infor-wrapper">
           <div className="infor-main">
               <div className="search-infor">

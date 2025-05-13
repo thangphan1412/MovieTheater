@@ -46,6 +46,26 @@ public class EmployeeServiceImpl implements EmployeeService {
         return employeeReposotory.save(employee);
     }
 
+    @Override
+    public Employee updateEmployee(Employee employee,EmployeeRequest request) {
+
+        employee.setFullName(request.getFullName());
+        employee.setEmail(request.getEmail());
+        employee.setAccount(request.getAccount());
+        employee.setPassword(request.getPassword());
+        employee.setPhone(request.getPhone());
+        employee.setSex(request.isSex());
+        employee.setIdCitizenCard(request.getIdCitizenCard());
+        employee.setShift(request.getShift());
+        return employeeReposotory.save(employee);
+    }
+
+    @Override
+    public void deteleEmployee(Employee employee) {
+//        AdminMovie adminMovie = adminMovieRepository.findById(employee.getEmployeeId());
+        employeeReposotory.delete(employee);
+    }
+
 //    @Override
 //    public Employee delete(EmployeeRequest request) {
 //        // kiem tra admin

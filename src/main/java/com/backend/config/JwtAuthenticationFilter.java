@@ -36,9 +36,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         String path = request.getRequestURI();
         if(path.startsWith("/api/admin")|| path.startsWith("/api/cinemas") ) {
             filterChain.doFilter(request, response);
-        }
-        if(authorHeader != null && authorHeader.startsWith("Bearer ")) {
-            filterChain.doFilter(request, response);
+            return;
         }
         //
         if (authorHeader == null || !authorHeader.startsWith("Bearer ")) {

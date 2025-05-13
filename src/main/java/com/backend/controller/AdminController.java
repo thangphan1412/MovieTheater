@@ -49,10 +49,21 @@ public class AdminController {
         Employee savedEmployee = employeeService.create(request);
         return ResponseEntity.ok(savedEmployee);
     }
+    // update thong tin
+    @PutMapping("/update/{id}")
+    public ResponseEntity<Employee> updateEmployee(@PathVariable Long id, @RequestBody EmployeeRequest request) {
+        Optional<Employee> employee = employeeService.findById(id);
+        if(employee.isEmpty()) {
+            return ResponseEntity.notFound().build();
+        }
+
+        Employee updateEmployee = employeeService.updateEmployee(employee.get(),request);
+        return ResponseEntity.ok(updateEmployee);
+    }
     // xoa nhan vien
-//    @DeleteMapping("/employee/{id}")
-//    public ResponseEntity<Employee> deleteEmployee(@RequestBody EmployeeRequest request) {
-//        Employee deEmployee = employeeService.delete(request);
-//        return ResponseEntity.ok(deEmployee);
-//    }
+    @DeleteMapping("/delete/{id}")
+    public void deleteEmployee(@PathVariable Long id) {
+        Employee employee = getEmployeeById(id).get();
+        employeeService.deteleEmployee(employee);
+    }
 }
