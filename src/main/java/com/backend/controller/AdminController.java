@@ -1,11 +1,15 @@
 package com.backend.controller;
 
 import com.backend.dto.employeeDTO.EmployeeRequest;
+import com.backend.dto.movieDTO.MovieRequest;
 import com.backend.entity.AdminMovie;
 import com.backend.entity.Employee;
+import com.backend.entity.Movie;
 import com.backend.entity.User;
 import com.backend.service.EmployeeService;
+import com.backend.service.MovieDetailService;
 import com.backend.service.UserService;
+import jakarta.persistence.Entity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -21,6 +25,8 @@ public class AdminController {
     @Autowired
     private EmployeeService employeeService;
 
+    @Autowired
+    private MovieDetailService movieDetailService;
 
     // lay user
     @GetMapping("/allUser")
@@ -65,5 +71,30 @@ public class AdminController {
     public void deleteEmployee(@PathVariable Long id) {
         Employee employee = getEmployeeById(id).get();
         employeeService.deteleEmployee(employee);
+    }
+    ///// CRUD phim
+    // getAllMovie
+    @GetMapping("/allMovie")
+    public List<Movie> getAllMovies() {
+        return movieDetailService.getAllMovieDetails();
+    }
+    @GetMapping("/movieDetail/{id}")
+    public Optional<Movie> getMovieById(@PathVariable Long id) {
+        return movieDetailService.getMovieDetailsByID(id);
+    }
+    // create movie
+    @PostMapping("/createMovie")
+    public ResponseEntity<Movie> createMovie(@RequestBody MovieRequest request) {
+        Movie createMovie = movieDetailService.create(request);
+        return ResponseEntity.ok(createMovie);
+    }
+    @PutMapping("/udpateMovie/{id}")
+    public ResponseEntity<Movie> updateMovie(@PathVariable Long id, @RequestBody MovieRequest request) {
+        Optional<Movie> movie = movieDetailService.getMovieDetailsByID(id);
+        if(movie.isEmpty()) {
+            return ResponseEntity.notFound().build();
+        }
+        Movie updateMovie = movieDetailService.update(movie.get(), request);
+        return ResponseEntity.ok(updateMovie);
     }
 }

@@ -1,5 +1,6 @@
 package com.backend.service;
 
+import com.backend.dto.movieDTO.MovieRequest;
 import com.backend.entity.Movie;
 import org.springframework.stereotype.Service;
 
@@ -10,5 +11,9 @@ import java.util.Optional;
 public interface MovieDetailService {
     List<Movie> getAllMovieDetails();
 
-    Optional<Object> getMovieDetailsByID(Long id);
+    Optional<Movie> getMovieDetailsByID(Long id);
+
+    Movie create(MovieRequest request);
+
+    Movie update(Movie movie, MovieRequest request);
 }
