@@ -2,14 +2,12 @@ package com.backend.controller;
 
 import com.backend.dto.employeeDTO.EmployeeRequest;
 import com.backend.dto.movieDTO.MovieRequest;
-import com.backend.entity.AdminMovie;
 import com.backend.entity.Employee;
 import com.backend.entity.Movie;
 import com.backend.entity.User;
 import com.backend.service.EmployeeService;
 import com.backend.service.MovieDetailService;
 import com.backend.service.UserService;
-import jakarta.persistence.Entity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
