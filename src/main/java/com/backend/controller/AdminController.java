@@ -4,9 +4,11 @@ import com.backend.dto.employeeDTO.EmployeeRequest;
 import com.backend.dto.movieDTO.MovieRequest;
 import com.backend.entity.Employee;
 import com.backend.entity.Movie;
+import com.backend.entity.Theater;
 import com.backend.entity.User;
 import com.backend.service.EmployeeService;
 import com.backend.service.MovieDetailService;
+import com.backend.service.ThreadService;
 import com.backend.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -25,6 +27,8 @@ public class AdminController {
 
     @Autowired
     private MovieDetailService movieDetailService;
+    @Autowired
+    private ThreadService threadService;
 
     // lay user
     @GetMapping("/allUser")
@@ -94,5 +98,22 @@ public class AdminController {
         }
         Movie updateMovie = movieDetailService.update(movie.get(), request);
         return ResponseEntity.ok(updateMovie);
+    }
+
+    ///// manage seat
+    //CRUD theat
+    @GetMapping("/allTheater")
+    public List<Theater> getAllTheaters() {
+        return threadService.getAllThreater();
+    }
+    @GetMapping("/getTheater/{id}")
+    public Optional<Theater> getTheaterById(Long id){
+        return threadService.getTheater(id);
+    }
+
+    @PostMapping("createTheater")
+    public ResponseEntity<Theater> createTheater(){
+        Theater createTheater = threadService.getTheater();
+        return ResponseEntity.ok(createTheater);
     }
 }
