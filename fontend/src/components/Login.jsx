@@ -42,6 +42,7 @@ const Login = () => {
                         </Form.Group>
                         <button type="submit" className="btn btn-primary w-100">Login</button>
                     </Form>
+                    <Form.Check aria-label="remember" /> remember me
                 </div>
             </div>
         </div>

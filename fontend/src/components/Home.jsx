@@ -5,7 +5,7 @@ import Carousels from "./Carousels/Carousels";
 
 import Footer from "./Footer";
 import PictureFilm from "./PictureFilm";
-import NavbarContent from "./Carousels/NavbarContent";
+
 
 
 const Home = () => {
