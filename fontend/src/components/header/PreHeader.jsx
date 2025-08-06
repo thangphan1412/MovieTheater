@@ -1,5 +1,5 @@
 import React from 'react';
-import "../../assets/css/headerCss/preHeader.css"
+import "../../assets/css/componentCss/headerCss/preHeader.css"
 export default function PeHeader() {
     return(
         <div className="title" >

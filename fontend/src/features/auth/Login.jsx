@@ -1,14 +1,17 @@
+import "../../assets/css/fearuresCss/authCss/login.css"
 export default function Login(){
-    function handleLogin(){
 
-    }
     return(
 
-        <div>
-            <h3>Email</h3>
-
-            <h3>Password</h3>
-            <button className="btn btn-primary" onClick={}>Login</button>
+        <div className="login-container">
+            <form action="">
+                <h2>Email</h2>
+                <input type="email"></input>
+                <h2>Password</h2>
+                <input type="password"></input>
+                <button type="submit">Login</button>
+                <button type="submit">Register</button>
+            </form>
         </div>
     );
 }

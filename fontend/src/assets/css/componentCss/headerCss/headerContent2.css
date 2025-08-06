@@ -1,0 +1,11 @@
+.nav-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    width: 100%;
+}
+
+#basic-navber-nav1 {
+    justify-self:start ; /* endĐẩy sang bên phải */
+}
+
