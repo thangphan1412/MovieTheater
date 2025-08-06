@@ -1,0 +1,11 @@
+.title{
+    background-color: black;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+
+}
+ .title-e{
+    color: white;
+     text-decoration: none;
+}
