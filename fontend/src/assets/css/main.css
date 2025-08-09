@@ -1,5 +1,8 @@
 .container {
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: auto 2fr auto;
+    /*overflow: hidden;*/
+
+    /*overflow: hidden; !* Ngăn tràn *!*/
 
 }

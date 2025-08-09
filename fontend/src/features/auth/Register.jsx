@@ -1,3 +1,5 @@
+import React from 'react';
+import "../../assets/css/fearuresCss/authCss/register.css"
 export default function Register(){
     return(
         <div className="register-container">
