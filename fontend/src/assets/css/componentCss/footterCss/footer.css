@@ -1,4 +1,7 @@
 .footer-container{
     display: grid;
-    grid-auto-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: auto auto auto;
+    border-top: 2px solid #000;
+    grid-template-rows: auto;
 }
+
