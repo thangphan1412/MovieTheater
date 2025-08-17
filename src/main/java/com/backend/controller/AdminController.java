@@ -1,5 +1,6 @@
 package com.backend.controller;
 
+import com.backend.dto.Theater.TheaterRequest;
 import com.backend.dto.employeeDTO.EmployeeRequest;
 import com.backend.dto.movieDTO.MovieRequest;
 import com.backend.entity.Employee;
@@ -111,9 +112,10 @@ public class AdminController {
         return threadService.getTheater(id);
     }
 
-    @PostMapping("createTheater")
-    public ResponseEntity<Theater> createTheater(){
-        Theater createTheater = threadService.getTheater();
+
+    @PostMapping("/createTheater")
+    public ResponseEntity<Theater> createTheater(@RequestBody TheaterRequest request){
+        Theater createTheater = threadService.create(request);
         return ResponseEntity.ok(createTheater);
     }
 }

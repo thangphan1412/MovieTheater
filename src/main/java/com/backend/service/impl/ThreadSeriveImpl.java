@@ -1,5 +1,6 @@
 package com.backend.service.impl;
 
+import com.backend.dto.Theater.TheaterRequest;
 import com.backend.entity.Theater;
 import com.backend.reponsitory.ThreatRespository;
 import com.backend.service.ThreadService;
@@ -14,12 +15,19 @@ public class ThreadSeriveImpl implements ThreadService {
     @Autowired
     private ThreatRespository threatRespository;
     @Override
-    public List<Theater> threater() {
+    public List<Theater> getAllThreater() {
         return threatRespository.findAll();
     }
+
+
 
     @Override
     public Optional<Theater> getTheater(Long id) {
         return threatRespository.findById(id);
+    }
+
+    @Override
+    public Theater create(TheaterRequest request) {
+        return null;
     }
 }
