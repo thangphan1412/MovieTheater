@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.Date;
+import java.util.UUID;
 
 @Setter
 @Getter
@@ -14,8 +15,8 @@ import java.util.Date;
 @ToString
 public class Payment {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long paymentId;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private UUID paymentId;
     private double amount;
     private String paymentMethod;
     private Date paymentDate;

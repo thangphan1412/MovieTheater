@@ -1,20 +1,21 @@
 package com.backend.service;
 
-import com.backend.dto.movieDTO.MovieReponse;
+import com.backend.dto.movieDTO.MovieResponse;
 import com.backend.dto.movieDTO.MovieRequest;
 import com.backend.entity.Movie;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 @Service
 public interface MovieDetailService {
-    List<MovieReponse> getAllMovieDetails();
+    List<MovieResponse> getAllMovieDetails();
 
-    Optional<Movie> getMovieDetailsByID(Long id);
+    Optional<Movie> getMovieDetailsByID(UUID id);
 
-    MovieReponse create(MovieRequest request);
+    MovieResponse create(MovieRequest request);
 
     Movie update(Movie movie, MovieRequest request);
 }

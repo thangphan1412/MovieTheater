@@ -10,7 +10,7 @@ import java.util.Date;
 @Builder
 @Getter
 @Setter
-public class MovieReponse {
+public class MovieResponse {
   private int movieId;
   private String title;
   private String director;

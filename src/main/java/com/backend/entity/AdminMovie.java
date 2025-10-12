@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.List;
+import java.util.UUID;
 
 @Setter
 @Getter
@@ -14,8 +15,8 @@ import java.util.List;
 @Entity
 public class AdminMovie {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long movieAdminId;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private UUID movieAdminId;
     private String fullName;
     private String email;
     private String userName;

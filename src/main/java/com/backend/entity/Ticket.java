@@ -5,6 +5,7 @@ import lombok.*;
 
 import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
 @Setter
 @Getter
@@ -15,8 +16,8 @@ import java.util.List;
 @ToString
 public class Ticket {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long ticketId;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private UUID ticketId;
     private double price;
     private Date purchaseDate;
     private Boolean status;

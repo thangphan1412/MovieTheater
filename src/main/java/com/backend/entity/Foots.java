@@ -3,6 +3,8 @@ package com.backend.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.UUID;
+
 @Setter
 @Getter
 @AllArgsConstructor
@@ -12,8 +14,8 @@ import lombok.*;
 @ToString
 public class Foots {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long foodId;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private UUID foodId;
     private String name;
     private double price;
 

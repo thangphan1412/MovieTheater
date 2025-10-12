@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.List;
+import java.util.UUID;
 
 @Setter@Getter
 @AllArgsConstructor
@@ -13,8 +14,8 @@ import java.util.List;
 @Table(name = "employees")
 public class Employee {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long employeeId;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private UUID employeeId;
     private String fullName;
     private String email;
     private String account;

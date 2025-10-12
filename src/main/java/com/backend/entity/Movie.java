@@ -5,6 +5,7 @@ import lombok.*;
 
 import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
 
 @Setter
@@ -16,8 +17,8 @@ import java.util.List;
 @ToString
 public class Movie {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long movieId;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private UUID movieId;
     private String title;
     private String director;
     private Date releaseDate;

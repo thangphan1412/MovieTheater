@@ -3,6 +3,8 @@ package com.backend.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.UUID;
+
 @Setter
 @Getter
 @AllArgsConstructor
@@ -12,6 +14,6 @@ import lombok.*;
 @ToString
 public class Vocher {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long voucherId;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private UUID voucherId;
 }

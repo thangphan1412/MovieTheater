@@ -6,11 +6,10 @@ import java.util.Date;
 
 @AllArgsConstructor
 @NoArgsConstructor
-
 @Setter
 @Getter
 public class MovieRequest {
-    private String titleMovie;
+    private String title;
     private String director;
     private Date releaseDate;
     private String performer;

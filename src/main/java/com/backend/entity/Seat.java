@@ -3,6 +3,8 @@ package com.backend.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.UUID;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -12,8 +14,8 @@ import lombok.*;
 @ToString
 public class Seat {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long seatId;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private UUID seatId;
     private int row;
     private int numberSeat;
     private boolean status;

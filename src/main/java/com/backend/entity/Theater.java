@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.List;
+import java.util.UUID;
 
 @Setter
 @Getter
@@ -14,8 +15,8 @@ import java.util.List;
 @ToString
 public class Theater {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long theaterId;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private UUID theaterId;
     private String theaterName;
     private int totalNumberOfSeats;
 

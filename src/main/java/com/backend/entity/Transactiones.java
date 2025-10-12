@@ -5,6 +5,7 @@ import lombok.*;
 
 import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
 @Getter
 @Setter
@@ -15,8 +16,8 @@ import java.util.List;
 @ToString
 public class Transactiones {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long transactionId;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private UUID transactionId;
     private double totalAmount;
     private Date transactionDate;
 

@@ -5,6 +5,7 @@ import lombok.*;
 
 import java.sql.Time;
 import java.util.List;
+import java.util.UUID;
 
 @Getter
 @Setter
@@ -15,8 +16,8 @@ import java.util.List;
 @Table(name = "showtime")
 public class Showtime {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long showtimeId;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private UUID showtimeId;
     private Time startTime;
     private Time endTime;
 
