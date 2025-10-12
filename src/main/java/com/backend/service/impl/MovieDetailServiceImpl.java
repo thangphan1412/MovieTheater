@@ -45,11 +45,13 @@ public class MovieDetailServiceImpl implements MovieDetailService {
 
     @Override
     public MovieReponse create(MovieRequest request) {
-        if(movieDetailRepository.existsAllByTitle(request.getTitle())){
-            throw new RuntimeException("Phim đã tồn tại");
+        if (request.getTitleMovie() == null || request.getTitleMovie().trim().isEmpty()) {
+            throw new RuntimeException("Movie title cannot be empty");
         }
+
+
         Movie movie = modelMapper.map(request, Movie.class);
-        User user = userRepository.findById(request.getUserssId())
+        User user = userRepository.findById(request.getUserId())
                 .orElseThrow(() -> new RuntimeException("User not found"));
         movie.setUser(user);
         Movie savedMovie = movieDetailRepository.save(movie);
@@ -60,7 +62,7 @@ public class MovieDetailServiceImpl implements MovieDetailService {
 
     @Override
     public Movie update(Movie movie, MovieRequest request) {
-        movie.setTitle(request.getTitle());
+        movie.setTitle(request.getTitleMovie());
         movie.setDirector(request.getDirector());
         movie.setReleaseDate(request.getReleaseDate());
         movie.setPerformer(request.getPerformer());

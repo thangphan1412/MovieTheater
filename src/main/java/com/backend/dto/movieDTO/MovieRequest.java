@@ -1,18 +1,16 @@
 package com.backend.dto.movieDTO;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.Date;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
-@Builder
+
+@Setter
+@Getter
 public class MovieRequest {
-    private String title;
+    private String titleMovie;
     private String director;
     private Date releaseDate;
     private String performer;
@@ -21,6 +19,6 @@ public class MovieRequest {
     private String language;
     private int duration;
     private String image;
-    private Long userssId;
+    private Long userId;
     private String userName;
 }

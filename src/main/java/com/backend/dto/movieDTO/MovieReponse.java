@@ -1,9 +1,6 @@
 package com.backend.dto.movieDTO;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.Date;
 
@@ -11,6 +8,8 @@ import java.util.Date;
 @NoArgsConstructor
 @Data
 @Builder
+@Getter
+@Setter
 public class MovieReponse {
   private int movieId;
   private String title;
