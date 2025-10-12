@@ -9,6 +9,6 @@ import java.util.Optional;
 
 @Repository
 public interface MovieDetailRepository extends JpaRepository<Movie, Long>{
-
+    boolean existsAllByTitle(String title);
 
 }

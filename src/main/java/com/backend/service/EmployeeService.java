@@ -1,6 +1,7 @@
 package com.backend.service;
 
 import com.backend.dto.employeeDTO.EmployeeRequest;
+import com.backend.dto.employeeDTO.EmployeeResponse;
 import com.backend.entity.Employee;
 import org.springframework.stereotype.Service;
 
@@ -11,7 +12,7 @@ import java.util.Optional;
 public interface EmployeeService {
      List<Employee> getAllEmployees();
     Optional<Employee> findById(Long employeeId);
-    Employee create(EmployeeRequest request);
+    EmployeeResponse create(EmployeeRequest request);
     Employee updateEmployee(Employee employee,EmployeeRequest request);
 
     void deteleEmployee(Employee employee);

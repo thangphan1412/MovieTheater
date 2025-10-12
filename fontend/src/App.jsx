@@ -20,16 +20,5 @@ function App() {
         </div>
     );
 }
-// <Router>
-//     <div className="">
-//         <Routes>
-//             <Route path="/" element={<Home />} />
-//             <Route path="/home" element={<Home />} />
-//             <Route path="/login" element={<Login />} />
-//             <Route path="/register" element={<Register />} />
-//             <Route path={"admin"} element={<Admin/>}/>
-//             <Route path={"/employee"} element={<Employee/>} />
-//         </Routes>
-//     </div>
-// </Router>
+
 export default App;

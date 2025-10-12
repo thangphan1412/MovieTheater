@@ -2,6 +2,8 @@ package com.backend.controller;
 
 import com.backend.dto.Theater.TheaterRequest;
 import com.backend.dto.employeeDTO.EmployeeRequest;
+import com.backend.dto.employeeDTO.EmployeeResponse;
+import com.backend.dto.movieDTO.MovieReponse;
 import com.backend.dto.movieDTO.MovieRequest;
 import com.backend.entity.Employee;
 import com.backend.entity.Movie;
@@ -12,6 +14,7 @@ import com.backend.service.MovieDetailService;
 import com.backend.service.ThreadService;
 import com.backend.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
@@ -53,10 +56,15 @@ public class AdminController {
         return employeeService.findById(id);
     }
     // tao nhan vien
-    @PostMapping("/createEmployee")
-    public ResponseEntity<Employee> createEmployee(@RequestBody EmployeeRequest request) {
-        Employee savedEmployee = employeeService.create(request);
-        return ResponseEntity.ok(savedEmployee);
+//    @PostMapping("/createEmployee")
+//    public ResponseEntity<Employee> createEmployee(@RequestBody EmployeeRequest request) {
+//        Employee savedEmployee = employeeService.create(request);
+//        return ResponseEntity.ok(savedEmployee);
+//    }
+    @PostMapping
+    public ResponseEntity<EmployeeResponse> create(@RequestBody EmployeeRequest request) {
+        EmployeeResponse response = employeeService.create(request);
+        return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
     // update thong tin
     @PutMapping("/update/{id}")
@@ -76,21 +84,33 @@ public class AdminController {
         employeeService.deteleEmployee(employee);
     }
     ///// CRUD phim
-    // getAllMovie
-    @GetMapping("/allMovie")
-    public List<Movie> getAllMovies() {
-        return movieDetailService.getAllMovieDetails();
-    }
-    @GetMapping("/movieDetail/{id}")
-    public Optional<Movie> getMovieById(@PathVariable Long id) {
-        return movieDetailService.getMovieDetailsByID(id);
-    }
     // create movie
-    @PostMapping("/createMovie")
-    public ResponseEntity<Movie> createMovie(@RequestBody MovieRequest request) {
-        Movie createMovie = movieDetailService.create(request);
-        return ResponseEntity.ok(createMovie);
+    @PostMapping("/CreateMovie")
+    public ResponseEntity<?> createMovie(MovieRequest movieRequest){
+        try{
+            MovieReponse movieReponse = movieDetailService.create(movieRequest);
+            return ResponseEntity.status(HttpStatus.CREATED).body(movieReponse);
+        } catch (RuntimeException e){
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
+
     }
+
+    // getAllMovie
+//    @GetMapping("/allMovie")
+//    public List<Movie> getAllMovies() {
+//        return movieDetailService.getAllMovieDetails();
+//    }
+//    @GetMapping("/movieDetail/{id}")
+//    public Optional<Movie> getMovieById(@PathVariable Long id) {
+//        return movieDetailService.getMovieDetailsByID(id);
+//    }
+//    // create movie
+//    @PostMapping("/createMovie")
+//    public ResponseEntity<Movie> createMovie(@RequestBody MovieRequest request) {
+//        Movie createMovie = movieDetailService.create(request);
+//        return ResponseEntity.ok(createMovie);
+//    }
     @PutMapping("/udpateMovie/{id}")
     public ResponseEntity<Movie> updateMovie(@PathVariable Long id, @RequestBody MovieRequest request) {
         Optional<Movie> movie = movieDetailService.getMovieDetailsByID(id);

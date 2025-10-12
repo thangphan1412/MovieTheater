@@ -9,6 +9,10 @@ export default function Login(){
     const handleSubmit = async (e) => {
         e.preventDefault();
         try{
+            // const myPromes = new Promise(function(resolve,reject){
+            //     resolve("abc")
+            // })
+            // document.getElementById()
             const result = await loginApi(email, password);
             setMessage("dang nhap thanh cong");
             console.log(result);

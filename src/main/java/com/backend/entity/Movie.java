@@ -32,4 +32,9 @@ public class Movie {
     //showtime
     @OneToMany(mappedBy = "movie")
     private List<Showtime> showtimes;
+
+    // user
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
+    private User user;
 }

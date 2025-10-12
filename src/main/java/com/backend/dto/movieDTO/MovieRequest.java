@@ -21,4 +21,6 @@ public class MovieRequest {
     private String language;
     private int duration;
     private String image;
+    private Long userssId;
+    private String userName;
 }

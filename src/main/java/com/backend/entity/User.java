@@ -40,6 +40,9 @@ public class User implements UserDetails {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id", referencedColumnName = "userId")
     private Transactiones transactiones;
+    @OneToMany(mappedBy = "user")
+    private List<Movie> movies;
+
 
     ///////////////////////////////////////////////////////
     @Enumerated(EnumType.STRING)

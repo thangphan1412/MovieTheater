@@ -1,25 +1,41 @@
 package com.backend.service.impl;
 
+import com.backend.dto.movieDTO.MovieReponse;
 import com.backend.dto.movieDTO.MovieRequest;
 import com.backend.entity.Movie;
+import com.backend.entity.User;
 import com.backend.reponsitory.MovieDetailRepository;
+import com.backend.reponsitory.UserRepository;
 import com.backend.service.MovieDetailService;
+import com.backend.service.UserService;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Optional;
 
+import static java.util.stream.Collectors.toList;
+
 
 @Component
 public class MovieDetailServiceImpl implements MovieDetailService {
     @Autowired
     private MovieDetailRepository movieDetailRepository ;
+    @Autowired
+    private UserRepository userRepository;
+    @Autowired
+    private ModelMapper modelMapper;
 
 
     @Override
-    public List<Movie> getAllMovieDetails() {
-        return movieDetailRepository.findAll();
+    public List<MovieReponse> getAllMovieDetails() {
+        return movieDetailRepository.findAll().stream()
+                .map(movie -> {
+                    MovieReponse movieReponse = modelMapper.map(movie, MovieReponse.class);
+                    return movieReponse;
+                }
+                ).toList();
     }
 
     @Override
@@ -28,19 +44,18 @@ public class MovieDetailServiceImpl implements MovieDetailService {
     }
 
     @Override
-    public Movie create(MovieRequest request) {
-        Movie movie = new Movie();
-        movie.setTitle(request.getTitle());
-        movie.setDirector(request.getDirector());
-        movie.setReleaseDate(request.getReleaseDate());
-        movie.setPerformer(request.getPerformer());
-        movie.setCategory(request.getCategory());
-        movie.setCountry(request.getCountry());
-        movie.setLanguage(request.getLanguage());
-        movie.setDuration(request.getDuration());
-        movie.setImage(request.getImage());
-
-        return movieDetailRepository.save(movie);
+    public MovieReponse create(MovieRequest request) {
+        if(movieDetailRepository.existsAllByTitle(request.getTitle())){
+            throw new RuntimeException("Phim đã tồn tại");
+        }
+        Movie movie = modelMapper.map(request, Movie.class);
+        User user = userRepository.findById(request.getUserssId())
+                .orElseThrow(() -> new RuntimeException("User not found"));
+        movie.setUser(user);
+        Movie savedMovie = movieDetailRepository.save(movie);
+        MovieReponse movieReponse = modelMapper.map(savedMovie, MovieReponse.class);
+        movieReponse.setUserName(savedMovie.getUser().getUsername());
+        return movieReponse;
     }
 
     @Override
