@@ -44,15 +44,16 @@ public class MovieDetailServiceImpl implements MovieDetailService {
 
     @Override
     public MovieResponse create(MovieRequest request) {
-//        if (request.getTitle() == null || request.getTitle().trim().isEmpty()) {
-//            throw new RuntimeException("Movie title cannot be empty");
-//        }
+        if (request.getTitle() == null || request.getTitle().trim().isEmpty()) {
+            throw new RuntimeException("Movie title cannot be empty");
+        }
 
         if(request.getUserId() == null ){
             throw new RuntimeException(("user id can not be null"));
         }
 
         Movie movie = modelMapper.map(request, Movie.class);
+
         User user = userRepository.findById(request.getUserId())
                 .orElseThrow(() -> new RuntimeException("User not found"));
         movie.setUser(user);

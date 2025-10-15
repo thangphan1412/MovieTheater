@@ -8,7 +8,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 @Repository
-public interface AdminMovieRepository extends JpaRepository<AdminMovie, Long> {
+public interface AdminMovieRepository extends JpaRepository<AdminMovie, UUID> {
 
 
 }

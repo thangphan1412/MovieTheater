@@ -3,6 +3,7 @@ package com.backend.dto.movieDTO;
 import lombok.*;
 
 import java.util.Date;
+import java.util.UUID;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -18,6 +19,6 @@ public class MovieRequest {
     private String language;
     private int duration;
     private String image;
-    private Long userId;
+    private UUID userId;
     private String userName;
 }
