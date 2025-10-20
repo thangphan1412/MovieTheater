@@ -25,8 +25,5 @@ public class MovieDetailController {
         return ResponseEntity.ok().body(movieDetailService.getAllMovieDetails());
     }
 
-//    @GetMapping("/{id}")
-//    public Optional<Movie> getMovieDetail(@PathVariable Long id) {
-//        return movieDetailService.getMovieDetailsByID(id);
-//    }
+
 }

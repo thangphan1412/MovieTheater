@@ -13,9 +13,9 @@ import java.util.UUID;
 public interface MovieDetailService {
     List<MovieResponse> getAllMovieDetails();
 
-    Optional<Movie> getMovieDetailsByID(UUID id);
+    MovieResponse getMovieDetailsByID(UUID id);
 
     MovieResponse create(MovieRequest request);
 
-    Movie update(Movie movie, MovieRequest request);
+    MovieResponse update(UUID id, MovieRequest request);
 }

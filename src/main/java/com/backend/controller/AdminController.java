@@ -92,16 +92,16 @@ public class AdminController {
         }
 
     }
-
+    @GetMapping("/movie/{id}")
+    public ResponseEntity<MovieResponse> getMovieById(@PathVariable UUID id){
+        MovieResponse movieResponse = movieDetailService.getMovieDetailsByID(id);
+        return ResponseEntity.status(HttpStatus.OK).body(movieResponse);
+    }
 
     @PutMapping("/udpateMovie/{id}")
-    public ResponseEntity<Movie> updateMovie(@PathVariable UUID id, @RequestBody MovieRequest request) {
-        Optional<Movie> movie = movieDetailService.getMovieDetailsByID(id);
-        if(movie.isEmpty()) {
-            return ResponseEntity.notFound().build();
-        }
-        Movie updateMovie = movieDetailService.update(movie.get(), request);
-        return ResponseEntity.ok(updateMovie);
+    public ResponseEntity<MovieResponse> updateMovie(@PathVariable UUID id, @RequestBody MovieRequest request) {
+        MovieResponse movieResponse = movieDetailService.update(id, request);
+        return ResponseEntity.ok(movieResponse);
     }
 
     ///// manage seat

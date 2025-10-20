@@ -37,8 +37,11 @@ public class MovieDetailServiceImpl implements MovieDetailService {
     }
 
     @Override
-    public Optional<Movie> getMovieDetailsByID(UUID id) {
-        return Optional.empty();
+    public MovieResponse getMovieDetailsByID(UUID id) {
+        Movie movie = movieDetailRepository.findById(id)
+                .orElseThrow(()-> new RuntimeException("movie not found"));
+        MovieResponse movieResponse = modelMapper.map(movie, MovieResponse.class);
+        return movieResponse;
     }
 
 
@@ -64,17 +67,17 @@ public class MovieDetailServiceImpl implements MovieDetailService {
     }
 
     @Override
-    public Movie update(Movie movie, MovieRequest request) {
-        movie.setTitle(request.getTitle());
-        movie.setDirector(request.getDirector());
-        movie.setReleaseDate(request.getReleaseDate());
-        movie.setPerformer(request.getPerformer());
-        movie.setCategory(request.getCategory());
-        movie.setCountry(request.getCountry());
-        movie.setLanguage(request.getLanguage());
-        movie.setDuration(request.getDuration());
-        movie.setImage(request.getImage());
+    public MovieResponse update(UUID id, MovieRequest request) {
+        Movie findMovieId = movieDetailRepository.findById(id).orElseThrow(()-> new RuntimeException("Movie not found"));
+        modelMapper.map(request, findMovieId);
 
-        return movieDetailRepository.save(movie);
+        User user = userRepository.findById(request.getUserId())
+                .orElseThrow(() -> new RuntimeException("User not found"));
+        findMovieId.setUser(user);
+        Movie savedMovie = movieDetailRepository.save(findMovieId);
+        MovieResponse movieResponse = modelMapper.map(savedMovie, MovieResponse.class);
+        return movieResponse;
     }
+
+
 }
