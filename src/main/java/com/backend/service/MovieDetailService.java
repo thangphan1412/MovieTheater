@@ -18,4 +18,6 @@ public interface MovieDetailService {
     MovieResponse create(MovieRequest request);
 
     MovieResponse update(UUID id, MovieRequest request);
+
+   List<MovieResponse>  searchMovie(String title);
 }

@@ -2,13 +2,11 @@ package com.backend.controller;
 
 import com.backend.dto.movieDTO.MovieResponse;
 import com.backend.entity.Movie;
+import com.backend.enums.Status;
 import com.backend.service.MovieDetailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -25,5 +23,8 @@ public class MovieDetailController {
         return ResponseEntity.ok().body(movieDetailService.getAllMovieDetails());
     }
 
-
+    @GetMapping("/searchMovie")
+    public ResponseEntity<List<MovieResponse>> searchMovieByTitle(@RequestParam String title){
+        return ResponseEntity.ok().body(movieDetailService.getAllMovieDetails());
+    }
 }

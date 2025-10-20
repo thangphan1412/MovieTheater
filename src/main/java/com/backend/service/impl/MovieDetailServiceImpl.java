@@ -79,5 +79,15 @@ public class MovieDetailServiceImpl implements MovieDetailService {
         return movieResponse;
     }
 
+    @Override
+    public List<MovieResponse> searchMovie(String title) {
+        return movieDetailRepository.findMovieAllByTitle(title)
+                .stream().map(movie -> {
+                    MovieResponse movieResponse = modelMapper.map(movie, MovieResponse.class);
+                    return movieResponse;
+                })
+                .toList();
+    }
+
 
 }
